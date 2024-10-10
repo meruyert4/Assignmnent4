@@ -2,7 +2,7 @@ let number = prompt("Enter number: ")
 let string = prompt("Enter string: ")
 let bool = prompt("Enter boolean: ")
 
-number = Number(number)
+number = parseInt(number)
 bool = bool.toLowerCase() == 'true' 
 
 document.write(`Number Input: ${number}, Data type: ${typeof number} <br>`)
