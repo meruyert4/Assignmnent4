@@ -23,3 +23,11 @@ document.write(`Is the number odd? ${isodd} <br>`)
 document.write(`Is the number a multiple of 5? ${multof5} <br>`)
 document.write(`Is the number greater than 10? ${greaterthan10} <br>`)
 document.write(`The number is special!`)
+
+
+console.log(`You entered: ${number} <br>`)
+console.log(`Is the number even? ${iseven} <br>`)
+console.log(`Is the number odd? ${isodd} <br>`)
+console.log(`Is the number a multiple of 5? ${multof5} <br>`)
+console.log(`Is the number greater than 10? ${greaterthan10} <br>`)
+console.log(`The number is special!`)
