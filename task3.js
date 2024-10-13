@@ -1,33 +1,17 @@
-let number = prompt("Enter number: ");
+const number = parseInt(prompt("Enter a number:"));
 
-let iseven = false;
-let isodd = false;
-let multof5 = false;
-let greaterthan10 = false;
+const isEven = number % 2 === 0;
+const isOdd = number % 2 !== 0;
 
-if(number % 2 == 1){
-    isodd = true;
-} else if(number % 2 == 0){
-    iseven = true
+const isMultipleOf5 = number % 5 === 0;
+const isGreaterThan10 = number > 10;
+
+console.log(`You entered: ${number}`);
+console.log(`Is the number even? ${isEven}`);
+console.log(`Is the number odd? ${isOdd}`);
+console.log(`Is the number a multiple of 5? ${isMultipleOf5}`);
+console.log(`Is the number greater than 10? ${isGreaterThan10}`);
+
+if (isMultipleOf5 || isGreaterThan10) {
+    console.log("The number is special!");
 }
-if (number % 5 == 0){
-    multof5 = true;
-}
-if (number > 10){
-    greaterthan10 = true
-}
-
-document.write(`You entered: ${number} <br>`)
-document.write(`Is the number even? ${iseven} <br>`)
-document.write(`Is the number odd? ${isodd} <br>`)
-document.write(`Is the number a multiple of 5? ${multof5} <br>`)
-document.write(`Is the number greater than 10? ${greaterthan10} <br>`)
-document.write(`The number is special!`)
-
-
-console.log(`You entered: ${number} <br>`)
-console.log(`Is the number even? ${iseven} <br>`)
-console.log(`Is the number odd? ${isodd} <br>`)
-console.log(`Is the number a multiple of 5? ${multof5} <br>`)
-console.log(`Is the number greater than 10? ${greaterthan10} <br>`)
-console.log(`The number is special!`)

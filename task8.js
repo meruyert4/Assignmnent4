@@ -14,13 +14,6 @@ if (second < first){
 }
 
 
-document.write(`Fist number: ${first} <br>`)
-document.write(`Second number: ${second} <br>`)
-document.write(`<br>`)
-document.write(`Is first number greater than second? ${isgreate} <br>`)
-document.write(`Is first number less than second? ${isless} <br>`)
-document.write(`Is first number equal to second? ${isequal} <br>`)
-
 
 console.log(`Fist number: ${first}`)
 console.log(`Second number: ${second}`)

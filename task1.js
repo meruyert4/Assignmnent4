@@ -16,5 +16,3 @@ if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < newdate.g
 let sentence = `My name is ${name} ${surname} and i am ${age} years old.`;
 
 console.log(sentence);
-
-document.write(sentence)

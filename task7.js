@@ -9,6 +9,3 @@ let userdetail = {
 }
 console.log(userdetail)
 
-document.write(`Name: ${userdetail.name} <br>`)
-document.write(`Age: ${userdetail.age} <br>`)
-document.write(`Hobby: ${userdetail.hobby} <br>`)
