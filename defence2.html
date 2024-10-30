@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        function createSquare(){
+            const square = document.createElement('div')
+            square.style.backgroundColor = 'yellow'
+            square.style.width = '250px'
+            square.style.height = '250px'
+            document.body.appendChild(square)
+        }
+
+        function createCircle(){
+            const circle = document.createElement('div')
+            circle.style.width = '200px'
+            circle.style.height = '200px'
+            circle.style.borderRadius = '50%'
+            circle.style.backgroundColor = 'blue'
+            document.body.appendChild(circle)
+        }
+
+        function createButton(){
+            const button = document.createElement('button');
+            button.textContent = "Button";
+            const container = document.createElement('div')
+            container.className = 'button-container';
+
+            button.classList.add("btn", "btn-danger", "rounded", "align-items-center")
+            const text = document.createElement('p');
+            text.textContent = "Salem Alem";
+            text.style.display = 'none';
+            text.style.marginLeft = '15px'
+
+            button.addEventListener('click', ()=>{
+                if (text.style.display ==='none'){
+                    text.style.display = 'inline'
+                } else{
+                    text.style.display = 'none'
+                }
+            });
+
+            container.appendChild(button)
+            container.appendChild(text)
+            document.body.appendChild(container);
+        }
+
+        function generateRandomColor(){
+            const randColor = '#' + Math.floor(Math.random() * 16777215).toString(16)
+            return randColor
+        }
+
+        function createColoredBox(){
+            const box = document.createElement('button')
+            // box.style.backgroundColor = generateRandomColor();
+            box.style.width='240px'
+            box.style.height='240px'
+            box.style.marginLeft = '30px'
+            box.style.marginTop = '30px'
+
+            //event listener
+            const button = document.createElement('button')
+            button.className = "btn btn-dark"
+            button.textContent = "Random Color"
+            button.style.marginLeft = "30px"
+
+            button.addEventListener('click', ()=>{
+                box.style.backgroundColor = generateRandomColor();
+            })
+            document.body.appendChild(box);
+            document.body.appendChild(button);
+        }
+
+        function swithTheme(){
+            const button = document.createElement('button')
+            button.textContent = 'Switch to Dark'
+            button.className = "btn btn-primary"
+
+
+            button.addEventListener('click', ()=>{
+                if (button.textContent === 'Switch to Dark'){
+                    document.body.style.backgroundColor = "grey";
+                    button.textContent = "Switch to Ligth";
+                } else{
+                    document.body.style.backgroundColor = "white";
+                    button.textContent = "Switch to Dark";
+                }
+            })
+
+            document.body.appendChild(button);
+        }
+
+        function createInputList(){
+            const input = document.createElement('input')
+            input.type = 'text'
+            input.placeholder = 'add new item'
+
+            const button = document.createElement('button')
+            button.textContent = 'add item'
+
+            const ul = document.createElement('ul')
+
+            button.addEventListener('click', ()=>{
+                const value = input.value.trim()
+
+                if (value){
+                    const li = document.createElement('li')
+                    li.textContent = value
+
+                    ul.appendChild(li)
+
+                    input.value = ''
+                }
+            })
+
+
+            document.body.appendChild(input)
+            document.body.appendChild(button)
+            document.body.appendChild(ul)
+        }
+
+        function printText(){
+            const input = document.createElement('input')
+            input.placeholder = 'write text'
+
+            const button = document.createElement('button')
+            button.textContent = 'print'
+            button.className = "btn btn-dark"
+            
+            const container = document.createElement('div')
+            container.style.display = 'flex'
+            container.style.alignItems = 'center'
+            container.style.justifyContent = 'center'
+            container.style.flexDirection = 'column'
+            container.style.height = '100vh'
+
+            button.addEventListener('click', ()=>{
+                const text = input.value;
+                if (text){
+                    const printedText = document.createElement('p')
+                    printedText.textContent = text
+                    container.append(printedText)
+                    input.value = ''
+                }
+            })
+
+            container.appendChild(input)
+            container.appendChild(button)
+            document.body.appendChild(container)
+        }
+
+        function createCalculator(){
+            const container = document.createElement('div')
+            container.className = "container"
+            container.style.display = 'flex'
+            container.style.alignItems = 'center'
+            container.style.justifyContent = 'center'
+            container.style.flexDirection = 'column'
+            container.style.height = '200vh'
+
+            const num1 = document.createElement('input')
+            num1.placeholder = 'enter first number'
+
+            const operation = document.createElement('input')
+            operation.placeholder = 'enter operation'
+
+            const num2 = document.createElement('input')
+            num2.placeholder = 'enter second number'
+
+            const button = document.createElement('button')
+            button.className = "btn btn-dark"
+            button.textContent = "result"
+
+            const answer = document.createElement('div')
+            answer.textContent = "answer is: "
+
+            button.addEventListener('click', ()=>{
+                const number1 = Number(num1.value)
+                const number2 = Number(num2.value)
+
+                let result
+                switch(operation.value){
+                    case '+':{
+                        result = number1 + number2
+                        break
+                    }
+                    case '-':{
+                        result = number1 - number2
+                        break
+                    }
+                    case '*':{
+                        result = number1 * number2
+                        break
+                    }
+                    case '/':{
+                        if (number2 === 0){
+                            result = "error deletion to 0"
+                            break
+                        }
+                        result = number1 / number2
+                        break
+                    }
+                    default:{
+                        result = "invalid operation please enter + - * /"
+                    }
+                }
+
+                answer.textContent = result
+            
+            })
+
+            container.appendChild(num1)
+            container.appendChild(num2)
+            container.appendChild(operation)
+            container.appendChild(answer)
+            container.appendChild(button)
+
+            document.body.appendChild(container)
+
+            container.getElementsByClassName
+        }
+        createCalculator();
+        printText()
+        createInputList()
+        swithTheme()
+        createColoredBox()
+        createButton()
+        createCircle()
+        createSquare()
+    </script>
+</body>
+</html>
